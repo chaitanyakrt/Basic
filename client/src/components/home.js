@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className="homepage">
 
-            <h1>Hello {location.state.id}, Welcome to the Online Judge platform</h1>
+            <h1>Hello {location.state.id}, Welcome to the Online Compilation platform</h1>
 
         </div>
     )
