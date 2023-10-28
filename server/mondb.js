@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const DBConnection = async () => {
     const MONGO_URI = 'mongodb+srv://admin123:Czd1M0nCANXlqCgU@cluster0.3komplc.mongodb.net/?retryWrites=true&w=majority';
@@ -10,4 +10,6 @@ const DBConnection = async () => {
     }
 };
 
-export default DBConnection;
+module.exports = {
+    DBConnection,
+}

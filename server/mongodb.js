@@ -1,6 +1,6 @@
-import DBConnection from "../server/mondb.js";
-import mongoose from "mongoose";
-DBConnection();
+const DBConnection = require('../server/mondb.js');
+const mongoose = require('mongoose');
+DBConnection.DBConnection();
 
 const newSchema=new mongoose.Schema({
     email:{
@@ -15,6 +15,7 @@ const newSchema=new mongoose.Schema({
 
 const collection = mongoose.model("collection",newSchema)
 
-export default collection;
-
+module.exports = {
+    collection,
+}
 

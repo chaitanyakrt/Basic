@@ -8,7 +8,7 @@ function Home() {
         <div className="homepage">
 
             <h1>Hello {location.state.id}, Welcome to the Online Compilation platform</h1>
-
+            <textarea rows = '20' cols = '75' className="textarea" > </textarea>
         </div>
     )
 }
