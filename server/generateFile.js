@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { v4: uuid } = require('uuid');
-const dirCodes = path.join(__dirname, 'codes');
+const dirCodes = path.join(__dirname, 'codes'); 
 
 if (!fs.existsSync(dirCodes)) {
     fs.mkdirSync(dirCodes, {recursive: true});
@@ -10,8 +10,8 @@ if (!fs.existsSync(dirCodes)) {
 const generateFile = async(format, content) => {
     const jobID = uuid();
     const filename = `${jobID}.${format}`;
-    const filePath = path.join(dirCodes, filename);
-    await fs.writeFileSync(filePath, content);
+    const filePath = path.join(__dirname, 'codes', filename);
+    await fs.promises.writeFile(filePath, content);
     return filePath;
 }
 
