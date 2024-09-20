@@ -1,0 +1,30 @@
+
+services:
+  # Frontend service (React app)
+  frontend:
+    build:
+      context: ./client
+    container_name: mern-frontend
+    image: chaitanyakrt/onlinecompiler:1.1.2
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  # Backend service (Node.js API)
+  backend:
+    build:
+      context: ./server
+    container_name: mern-backend
+    image: chaitanyakrt/onlinecompiler:1.1.2
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - MONGO_URI=mongodb+srv://admin123:Czd1M0nCANXlqCgU@cluster0.3komplc.mongodb.net/?retryWrites=true&w=majority
+    
