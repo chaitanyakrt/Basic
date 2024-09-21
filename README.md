@@ -24,7 +24,8 @@ This command will:
 
 Start the container in detached mode (-d).
 Map the container's port 3000 to your local machine's port 3000 (-p 3000:3000).
-3. Access the Application
+
+### 3. Access the Application
 Once the container is running, you can access the Online Compiler in your web browser at:
 
 http://localhost:3000
